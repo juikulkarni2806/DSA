@@ -7,7 +7,7 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
 
-    # 1. Create Linked List (Append node to the end)
+    # 1. Create Linked List 
     def append(self, data):
         new_node = Node(data)
         if not self.head:
@@ -27,7 +27,7 @@ class SinglyLinkedList:
             current = current.next
         print(" -> ".join(elements) if elements else "List is empty")
 
-    # 3. Insert node at a specific position (0-indexed)
+    # 3. Insert node at a specific position 
     def insert_at_position(self, data, position):
         new_node = Node(data)
         if position == 0:
@@ -65,7 +65,7 @@ class SinglyLinkedList:
     def delete_node(self, key):
         current = self.head
         
-        # If head node itself holds the key to be deleted
+        
         if current and current.data == key:
             self.head = current.next
             current = None
@@ -76,7 +76,7 @@ class SinglyLinkedList:
             prev = current
             current = current.next
 
-        # If key was not present in linked list
+        
         if current is None:
             print(f"Value {key} not found")
             return
@@ -111,14 +111,14 @@ class SinglyLinkedList:
         print("Consecutive sums: " + ", ".join(sums))
 
 
-# --- Full Execution Demonstration ---
+
 if __name__ == "__main__":
     ll = SinglyLinkedList()
     
-    # Complete sample data to fix the input loop error
+    
     input_values = [10, 20, 30, 40, 50]
     
-    # Operation 1 & 2: Create (Append) and Traverse
+    # Operation 1 & 2: Create and Traverse
     print("Operations 1 & 2: Create & Traverse")
     for val in input_values:
         ll.append(val)
