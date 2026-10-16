@@ -28,12 +28,11 @@ class DLL:
             while(p!=position-1):
                 temp=temp.next
                 p+=1
-            if temp.next:
-                temp.next.prev=new_node
-            
-            new_node.prev=temp    
             new_node.next=temp.next
             temp.next=new_node
+            temp.next.prev=new_node
+            new_node.prev=temp    
+            
 
         
         
