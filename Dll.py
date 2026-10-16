@@ -16,6 +16,28 @@ class DLL:
             temp.next=new_node
             new_node.prev=temp
 
+    def insert(self, new_node, position):
+
+        if position == 1:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head=new_node
+        else:
+            p=1
+            temp=self.head
+            while(p!=position-1):
+                temp=temp.next
+                p+=1
+            if temp.next:
+                temp.next.prev=new_node
+            
+            new_node.prev=temp    
+            new_node.next=temp.next
+            temp.next=new_node
+
+        
+        
+
     def reverse (self):
         curr=self.head
         prev=None
@@ -65,9 +87,10 @@ list1.append(Node(30))
 list1.append(Node(40))
 list1.append(Node(50))
 list1.append(Node(51))
-list1.print()
+#list1.print()
+list1.insert(Node(60),2)
 # list1.reverse()
-# list1.print()
+list1.print()
 # list1.findmid_del()
 # list1.print()
 # list1.delfirst_last()
