@@ -32,7 +32,29 @@ class DLL:
             temp.next=new_node
             temp.next.prev=new_node
             new_node.prev=temp    
+        
+    def delete_node(self, key):
+        temp= self.head
+        
+        
+        if temp.data == key:
+            self.head = temp.head.next
+            self.head.prev = None
+
+        else:
+            while (temp.data!=key and temp):
+                temp=temp.next
+                if temp==None:
+                    print("Value is not present in the list")
+                    return
+            temp.prev.next=temp.next
+            temp.next.prev=temp.prev
+            temp=None
             
+
+        
+        
+    
 
         
         
@@ -74,7 +96,7 @@ class DLL:
     def print(self):
         temp=self.head
         while(temp):
-            print(temp.data)
+            print("List Elements:",temp.data)
             temp=temp.next
             
 list1=DLL()            
@@ -94,3 +116,5 @@ list1.print()
 # list1.print()
 # list1.delfirst_last()
 # list1.print()
+list1.delete_node(40)
+list1.print()
