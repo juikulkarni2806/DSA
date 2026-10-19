@@ -60,13 +60,14 @@ class DLL:
         
 
     def reverse (self):
-        curr=self.head
+        temp=self.head
         prev=None
-        while(curr):
-            next_node=curr.next
-            curr.next=prev
-            prev=curr
-            curr=next_node
+        print("List Elements in Reverse Oreder:",end=" ")
+        while(temp):
+            next_node=temp.next
+            temp.next=prev
+            prev=temp
+            temp=next_node
         self.head=prev
 
     def findmid_del(self):
@@ -96,7 +97,8 @@ class DLL:
     def print(self):
         temp=self.head
         while(temp):
-            print("List Elements:",temp.data)
+
+            print(temp.data)
             temp=temp.next
             
 list1=DLL()            
@@ -110,11 +112,11 @@ list1.append(Node(50))
 list1.append(Node(51))
 #list1.print()
 list1.insert(Node(60),2)
-# list1.reverse()
+list1.reverse()
 list1.print()
 # list1.findmid_del()
 # list1.print()
 # list1.delfirst_last()
 # list1.print()
 list1.delete_node(40)
-list1.print()
+#list1.print()
